@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import MyApp from './redux/MyApp';
+import JustInfo from './pages/JustInfo';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <MyApp />
+        <JustInfo />
+     
     </div>
   );
 }
