@@ -1,8 +1,14 @@
-import React,{ useEffect, useState } from 'react';
+import React,{ useEffect, useReducer, useState } from 'react';
 import './Usage.css';
 
+function valueReducer() {
+   return 1;
+}
+
+
 function Usage() {
-  const [value,setValue] = useState(0);
+//   const [value,setValue] = useState(0);
+  const [value,dispatch] = useReducer(valueReducer,0)
   const [color,setColor] = useState('white');
   const [boom,setBoom] = useState(false);
 
@@ -32,11 +38,13 @@ function Usage() {
        <div className='usage'>
             <div className='usage-item' style={{background:color}}>
                 <button className='button' onClick = {()=> {
-                    setValue(value + 1)
+                    // setValue(value + 1)
+                    dispatch();
                 }}>Increment</button>
                 <label className='white'>{value}</label>
                 <button className='button' onClick = {()=> {
-                    setValue(value - 1)
+                    // setValue(value - 1)
+                    dispatch();
                 }}>Decrement</button>
                 <button className = 'butt' onClick={()=> {
                     setColor('green')
